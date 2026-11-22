@@ -9,11 +9,11 @@ def top_ten(subreddit):
         print(None)
         return
 
-    url = "https://www.reddit." + "com/r/{}/hot.json".format(subreddit)
+    url = "https://old.reddit." + "com/r/{}/hot.json".format(subreddit)
     headers = {
-        "User-Agent": "ubuntu:alu.api.advanced.app:v1.2.3 (by /u/rmasugueng)"
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36"
     }
-    params = {"limit": 10, "raw_json": 1}
+    params = {"limit": 10}
 
     response = requests.get(
         url, headers=headers, params=params, allow_redirects=False
