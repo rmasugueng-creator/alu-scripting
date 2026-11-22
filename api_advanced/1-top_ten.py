@@ -9,12 +9,13 @@ def top_ten(subreddit):
         print(None)
         return
 
-    url = "https://www.reddit." + "com/r/{}/hot.json?limit=10".format(
-        subreddit
-    )
-    headers = {"User-Agent": "linux:alu.api:v1.0 (by /u/alu)"}
+    url = "https://www.reddit." + "com/r/{}/hot.json".format(subreddit)
+    headers = {"User-Agent": "linux:alu.api.advanced:v1.0.0 (by /u/alu)"}
+    params = {"limit": 10}
 
-    response = requests.get(url, headers=headers, allow_redirects=False)
+    response = requests.get(
+        url, headers=headers, params=params, allow_redirects=False
+    )
     if response.status_code != 200:
         print(None)
         return
